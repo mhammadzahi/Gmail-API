@@ -42,12 +42,14 @@ def main():
     credentials = get_credentials()
     service = build('gmail', 'v1', credentials=credentials)
 
-    sender_email = "from_name <user101@gmail.com>"
+    sender_email = "Rickos General Maintenance <wecare@rickos-m.com>"
     recipient_email = "mohamedzahi33@gmail.com"
     email_subject = "Hi"
     email_body = "email body" 
 
     send_message(service, sender_email, recipient_email, email_subject, email_body)
+
+
 
 if __name__ == '__main__':
     main()
