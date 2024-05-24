@@ -9,16 +9,16 @@ REPLY_TO_CC = 'wecare@rickos-m.com'
 
 def get_credentials():
     creds = None
-    if os.path.exists('rickos_gmail_API_tocken.json'):
-        creds = Credentials.from_authorized_user_file('rickos_gmail_API_tocken.json')
+    if os.path.exists('rdmawymhmd.json'):
+        creds = Credentials.from_authorized_user_file('rdmawymhmd.json')
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', ['https://www.googleapis.com/auth/gmail.send'])
+            flow = InstalledAppFlow.from_client_secrets_file('mohamedzahi33-python_email_sender_creds.json', ['https://www.googleapis.com/auth/gmail.send'])
             creds = flow.run_local_server(port=0)
         
-        with open('rickos_gmail_API_tocken.json', 'w') as token:
+        with open('rdmawymhmd.json', 'w') as token:
             token.write(creds.to_json())
     return creds
 
@@ -138,6 +138,6 @@ def send_cancel_mail(to, service, name, date, time, address, hours):
 
 
 
-#if __name__ == '__main__':
-  #send_mail_func('mohamedzahi33@gmail.com', 'cleaning test', 'namee test', '01-04-2024', '09:00', 'address', 8, 'https://www.rickosm.com', 'paid_or_deducted_test', 'how_to_enter_test', 'problem_details_test')
+if __name__ == '__main__':
+  send_mail_func('mohamedzahi33@gmail.com', 'cleaning test', 'namee test', '01-04-2024', '09:00', 'address', 8, 'https://www.rickosm.com', 'paid_or_deducted_test', 'how_to_enter_test', 'problem_details_test')
   #send_cancel_mail('mohamedzahi33@gmail.com', 'cleaning test', 'name test', '01-04-2024', '09:00', 'address', 8)
