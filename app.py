@@ -9,8 +9,8 @@ REPLY_TO_CC = 'wecare@rickos-m.com'
 
 def get_credentials():
     creds = None
-    if os.path.exists('rdmawymhmd.json'):
-        creds = Credentials.from_authorized_user_file('rdmawymhmd.json')
+    if os.path.exists('samabialmuwahed.json'):
+        creds = Credentials.from_authorized_user_file('samabialmuwahed.json')
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
@@ -18,7 +18,7 @@ def get_credentials():
             flow = InstalledAppFlow.from_client_secrets_file('mohamedzahi33-python_email_sender_creds.json', ['https://www.googleapis.com/auth/gmail.send'])
             creds = flow.run_local_server(port=0)
         
-        with open('rdmawymhmd.json', 'w') as token:
+        with open('samabialmuwahed.json', 'w') as token:
             token.write(creds.to_json())
     return creds
 
